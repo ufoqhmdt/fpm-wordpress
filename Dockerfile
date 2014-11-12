@@ -1,15 +1,15 @@
-OM ubuntu:14.04
-MAINTAINER Pavel Litvyak <pvlltvk@gmail.com>
+FROM ubuntu:14.04
+MAINTAINER UFO <ufoqhmdt@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list && \
+RUN echo "deb http://mirrors.aliyun.com/ubuntu trusty main universe" > /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y dist-upgrade
 
-RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main" >> /etc/apt/sources.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-key E5267A6C && \
-    apt-get update
+# RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main" >> /etc/apt/sources.list && \
+#     apt-key adv --keyserver keyserver.ubuntu.com --recv-key E5267A6C && \
+#     apt-get update
 
 RUN apt-get -y install php5 php5-gd php5-ldap \
     php5-sqlite php5-pgsql php-pear php5-mysql \
